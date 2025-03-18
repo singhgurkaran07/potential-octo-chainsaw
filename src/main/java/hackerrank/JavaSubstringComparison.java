@@ -40,8 +40,9 @@ wel
 public class JavaSubstringComparison {
 
     public static void main(String[] args) {
-        System.out.println(getSmallestAndLargest("welcometojava",3));
+        System.out.println(getSmallestAndLargest("welcometojava",3)); // get the smallest and largest lexicographical substring from string
         System.out.println(getSubstrings("welcometojava",3));
+        System.out.println(5/2);
     }
 
     public static String getSmallestAndLargest(String s, int k) {
