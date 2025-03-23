@@ -20,6 +20,7 @@ public class PalindromeChecker {
         System.out.println(reverseString("zinnia"));
         System.out.println(reverseStringUsingJava8("zinnia"));
         System.out.println(reverseStringUsingRecursion("ratna"));
+        System.out.println(reverseStringUsing2Pointers("ratna"));
     }
 
     public static Boolean isPalindromeUsingJava7(String a) {
@@ -83,22 +84,33 @@ public class PalindromeChecker {
         Using streaming or disk-based techniques to handle the reversal.
     * */
 
-    public static String reverseString(String a){
+    public static String reverseString(String a) {
         return new StringBuilder(a).reverse().toString();
     }
 
-    public static String reverseStringUsingJava8(String a){
-        return IntStream.range(0,a.length())
-                .mapToObj(i -> a.charAt(a.length()-1-i))
+    public static String reverseStringUsingJava8(String a) {
+        return IntStream.range(0, a.length())
+                .mapToObj(i -> a.charAt(a.length() - 1 - i))
                 .map(String::valueOf)
                 .collect(Collectors.joining());
     }
 
-    public static String reverseStringUsingRecursion(String a){
+    public static String reverseStringUsingRecursion(String a) {
         int n = a.length();
-        if (n>0) {
-            return a.charAt(n-1) + reverseStringUsingRecursion(a.substring(0,n-1));
+        if (n > 0) {
+            return a.charAt(n - 1) + reverseStringUsingRecursion(a.substring(0, n - 1));
         }
         return "";
+    }
+
+    public static String reverseStringUsing2Pointers(String a) {
+        char[] chars = a.toCharArray();
+        int n = chars.length;
+        for (int i = 0; i < n/2; i++) {
+            char temp = chars[i];
+            chars[i] = chars[n - 1 - i];
+            chars[n - 1 - i] = temp;
+        }
+        return new String(chars);
     }
 }
