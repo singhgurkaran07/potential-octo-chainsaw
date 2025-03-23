@@ -19,6 +19,7 @@ public class PalindromeChecker {
         System.out.println(isPalindromeUsingJava8("madam") ? "Yes" : "No");
         System.out.println(reverseString("zinnia"));
         System.out.println(reverseStringUsingJava8("zinnia"));
+        System.out.println(reverseStringUsingRecursion("ratna"));
     }
 
     public static Boolean isPalindromeUsingJava7(String a) {
@@ -91,5 +92,13 @@ public class PalindromeChecker {
                 .mapToObj(i -> a.charAt(a.length()-1-i))
                 .map(String::valueOf)
                 .collect(Collectors.joining());
+    }
+
+    public static String reverseStringUsingRecursion(String a){
+        int n = a.length();
+        if (n>0) {
+            return a.charAt(n-1) + reverseStringUsingRecursion(a.substring(0,n-1));
+        }
+        return "";
     }
 }
