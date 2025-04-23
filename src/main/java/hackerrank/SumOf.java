@@ -12,10 +12,12 @@ public class SumOf {
 
     public static int simpleArraySum(List<Integer> ar) {
         // Write your code here using Java 8 functional programming
-
+        // stream -> reduce function can be used while needing to sum the integers of an array
         /*
         * other ways
-        * // Summing the list using forEach
+
+        *
+        * * // Summing the list using forEach
         final int[] sum = {0};
         numbers.forEach(num -> sum[0] += num);
         *
