@@ -1,4 +1,4 @@
-package swissreass;
+package swissreassignment;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

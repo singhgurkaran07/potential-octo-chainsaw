@@ -1,4 +1,4 @@
-package swissreass;
+package swissreassignment;
 
 import lombok.Getter;
 
