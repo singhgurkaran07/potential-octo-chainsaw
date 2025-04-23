@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class CompanyAnalysis {
 
+    //SWISS RE ASSIGNMENT -  TO READ CSV -- employees.csv file
+
     public static void main(String[] args) throws Exception {
         String filePath = "src/main/resources/employees.csv"; // Path to the input CSV file
         List<Employee> employees = readCSVEmployeeData(filePath);
