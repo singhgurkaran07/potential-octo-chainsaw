@@ -1,5 +1,6 @@
 package basics;
 
+
 public class SampleSingleton {
 
     private static SampleSingleton instance;
@@ -33,6 +34,15 @@ public class SampleSingleton {
 
 
 
+}
+
+class Main { // to test its singleton , constructor should be private
+    public static void main(String[] args) {
+        SampleSingleton ins = SampleSingleton.getInstance();
+        SampleSingleton ins1 = SampleSingleton.getInstance();
+        System.out.println(ins);
+        System.out.println(ins1);
+    }
 }
 
 
